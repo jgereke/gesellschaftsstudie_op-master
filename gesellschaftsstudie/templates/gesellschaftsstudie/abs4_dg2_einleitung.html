@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Entscheidungssituation 4
+{% endblock %}
+
+{% block content %}
+
+
+<p>
+  Jetzt möchten wir Sie bitten, <b>noch einmal die allererste Aufgabe zu wiederholen</b>, diesmal allerdings mit
+  {% if player.man_woman_second_pic == "woman" %} der zweiten Teilnehmerin, die {% else %} dem zweiten Teilnehmer, den {% endif %}
+  Sie gerade gesehen haben.
+</p>
+
+<p>
+  Wie zuvor erhalten Sie für diese Aufgabe <b>5€</b>.
+</p>
+
+<p>
+  Sie können nun entscheiden, ob Sie den ganzen oder Teile dieses
+  Geldbetrags mit
+  {% if player.man_woman_second_pic == "woman" %} der anderen Studienteilnehmerin {% else %} dem anderen Studienteilnehmer {% endif %}
+  teilen wollen. Sie können auch entscheiden,
+  kein Geld abzugeben, und die 5€ für sich zu behalten.
+ </p>
+
+<p><br></p>
+
+    {% next_button %}
+
+{% endblock %}

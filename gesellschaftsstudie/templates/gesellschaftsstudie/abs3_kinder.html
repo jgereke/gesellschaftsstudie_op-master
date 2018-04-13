@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+Eigenschaften Kinder
+{% endblock %}
+
+{% block inner_content %}
+
+
+  <p>Menschen haben unterschiedliche Vorstellungen darüber,
+  welche Eigenschaften Kinder in besonderem Maße haben sollten.
+  Nachfolgend nennen wir Ihnen einige Eigenschaftspaare.
+  <br> <br> Bitte sagen Sie uns jeweils,
+  welche der beiden Eigenschaften Kinder Ihrer Ansicht nach eher haben sollten.
+</p>
+
+<ul style="list-style-type:disc">
+<li> Unabhängigkeit oder Achtung vor älteren Menschen?
+{% formfield player.authoritarian1 label="" %} </li>
+<li> Neugier oder Gutes Benehmen?
+{% formfield player.authoritarian2 label="" %} </li>
+<li> Gehorsam oder Eigenständigkeit?
+{% formfield player.authoritarian3 label="" %} </li>
+<li> Rücksichtsvoll oder wohlerzogen?
+{% formfield player.authoritarian4 label="" %} </li>
+</ul>
+<p><br></p>
+
+  {% next_button %}
+
+
+{% endblock %}

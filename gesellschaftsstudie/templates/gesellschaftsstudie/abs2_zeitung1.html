@@ -1,0 +1,41 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% load user_agents %}
+
+
+{% block title %}
+Zeitungsüberschriften
+{% endblock %}
+
+{% block content %}
+
+<p>Wir möchten Ihre Meinung zu einigen Zeitungsüberschriften wissen.
+  Bitte nehmen Sie sich kurz Zeit, die folgenden Überschriften zu lesen.</p>
+
+{% if request|is_mobile %}
+<p><br></p>
+<img  alt = "Die Ost-West-Lücke schließt sich nicht" src = {%  static "newspapers/zeit_online_mobile.png" %} height=230px/>
+<p style="font-size:85%; text-indent: 15%">Zeit Online vom 05.09.2017</p>
+<p><br></p>
+<img  alt = "Beim Einkommen bleiben die Ostdeutschen abgehängt" src = {%  static "newspapers/welt_online_mobile.png" %} height=170px/>
+<p style="font-size:85%; text-indent: 15%">Welt Online vom 20.02.2017</p>
+<p><br></p>
+<img  alt = "Im Osten kaum Neues" src = {%  static "newspapers/faz_mobile.png" %} height=330px/>
+<p style="font-size:85%; text-indent: 15%">Frankfurter Allgemeine Zeitung vom 06.09.2017</p>
+<p><br></p>
+{% else %}
+   <p><br></p>
+<img  alt = "Die Ost-West-Lücke schließt sich nicht" src = {%  static "newspapers/zeit_online.png" %} height=250px/>
+<p style="font-size:90%; text-indent: 55%">Zeit Online vom 05.09.2017</p>
+  <p><br></p>
+ <img  alt = "Beim Einkommen bleiben die Ostdeutschen abgehängt" src = {%  static "newspapers/welt_online.png" %} height=230px/>
+<p style="font-size:90%; text-indent: 55%">Welt Online vom 20.02.2017</p>
+   <p><br></p>
+  <img  alt = "Im Osten kaum Neues" src = {%  static "newspapers/faz.png" %} height=400px/>
+<p style="font-size:90%; text-indent: 55%">Frankfurter Allgemeine Zeitung vom 06.09.2017</p>
+   <p><br></p>
+{% endif %}
+
+{% next_button %}
+
+{% endblock %}

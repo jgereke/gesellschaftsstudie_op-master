@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Entscheidungssituation 1
+{% endblock %}
+
+{% block content %}
+
+
+<p>
+  Für diese Aufgabe erhalten Sie <b>5€</b>.
+</p>
+
+<p>Im Folgenden können Sie entscheiden, ob Sie den ganzen oder Teile dieses
+  Geldbetrags mit einem der anderen Studienteilnehmer/innen teilen wollen. Sie können auch entscheiden,
+  kein Geld abzugeben und die 5€ für sich zu behalten.
+ </p>
+
+ <p>
+   Sobald Sie bereit sind zu starten, klicken Sie bitte ‚Weiter’. Der Computer wird Ihnen
+   dann eine/n andere/n Teilnehmer/in der Studie zuordnen.
+  </p>
+
+<p><br></p>
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Entscheidungssituation 3
+{% endblock %}
+
+{% block content %}
+
+<p>
+  <b>Wir wiederholen jetzt die gleiche Aufgabe, aber mit einem anderen Teilnehmer,</b> der vom Computer nach dem Zufallsprinzip ausgewählt wurde.
+</p>
+
+<p>
+  Sie und der/die andere Teilnehmer/in erhalten wiederum <b>5€</b> als Startguthaben.
+  Und Ihre Aufgabe besteht darin zu entscheiden, ob und gegebenenfalls wieviel Sie dem/der
+  anderen Teilnehmer/in schicken möchten.
+</p>
+
+<p>
+  Der/die andere Teilnehmer/in wird den doppelten Betrag von uns erhalten, und kann dann entscheiden,
+  welchen Betrag er/sie zurück an Sie schickt.</p>
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+Kontakt zu Flüchtlingen oder Asylsuchenden
+{% endblock %}
+
+{% block inner_content %}
+
+<ul style="list-style-type:disc">
+  <li> Hat Ihr Ort während der letzten drei Jahre Flüchtlinge oder Asylsuchende aufgenommen? {% formfield player.refugees label="" %}</li>
+  <li> Hatten Sie in den letzten drei Jahren persönlichen Kontakt zu Flüchtlingen oder Asylsuchenden? {% formfield player.contactrefugees label="" %}</li>
+  <p><br></p>
+
+    {% next_button %}
+
+  {% endblock %}

@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+Informationen über Politik
+{% endblock %}
+
+{% block inner_content %}
+
+<p>Es gibt verschiedene Möglichkeiten, wie man sich über das aktuelle politische Geschehen informieren kann.
+Woher bekommen Sie <b>die meisten</b> Informationen über die Politik oder Wahlen?
+{% formfield player.mainsourcenews label="" %}</p>
+
+<p>Haben Sie sich in der vergangenen Woche <b>im Internet</b> über die Politik oder die Parteien informiert?
+    Und wenn ja, an wie vielen Tagen?
+   {% formfield player.intpoluse label="" %}</p>
+
+<p>Wenn Sie sich mit Personen aus Ihrer Gemeinde/Stadt über politische Fragen unterhalten, wie oft, würden Sie sagen,
+  sind Sie dann unterschiedlicher Meinung?
+  {% formfield player.opiniondiff label="" %}</p>
+
+  <p>Was schätzen Sie, welcher Anteil der Bürgerinnen und Bürger Ihrer Gemeinde/Stadt unterstützt die AfD?
+    {% formfield player.afdsupport label="" %}</p>
+
+ <p><br></p>
+  {% next_button %}
+
+{% endblock %}

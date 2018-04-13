@@ -1,0 +1,51 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% load user_agents %}
+
+{% block title %}
+{%if afd_first %} Online Petition {%else%} Politische Parteien {%endif%}
+{% endblock %}
+
+{% block content %}
+
+ {%if afd_first %}
+
+ <p>
+   Nun möchten wir Sie um Ihre Meinung zu einer Petition an Bundespolitiker bitten.
+   Bitte schauen Sie sich den folgenden Petitionstext kurz an.
+ </p>
+ <!-- <p> <b>Wir sind gegen eine doppelte Staatsbürgerschaft von Türken und anderen Ausländern
+ und fordern den Bundestag auf, die Einführung der doppelten Staatsbürgerschaft abzulehnen.</b> -->
+
+ {% if request|is_mobile %}
+ <p><br></p>
+<img  alt = "Kein Wahlrecht für Migranten" src = {%  static "petition/petition_mobile.png" %} height=450px/>
+ <p><br></p>
+ {% else %}
+ <p><br></p>
+<img  alt = "Kein Wahlrecht für Migranten" src = {%  static "petition/petition.png" %} height=710px/>
+ <p><br></p>
+ {% endif %}
+
+
+ <p>
+   Auf einer Skala von 1 bis 11, wie stark unterstützen Sie oder lehnen Sie diese Petition ab?
+ </p>
+
+ {% formfield player.petition label="" %} </>
+ {{ form.afd.errors }}
+
+ {% else %}
+
+
+ <p>Was halten Sie so ganz allgemein von der AfD? Benutzen Sie zum Antworten bitte die folgende Skala von -5 bis +5,
+   wobei -5 für für &bdquo;halte überhaupt nichts von dieser Partei&ldquo; steht, und +5 für &bdquo;halte sehr viel von dieser Partei&ldquo;.</p>
+   {% formfield player.afd label="" %}
+   {{ form.petition.errors }}
+
+{% endif %}
+
+<p><br></p>
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+Bundestagswahl 2017
+{% endblock %}
+
+{% block inner_content %}
+
+<p>  Bei der Bundestagswahl am 24. September kamen viele Bürger/innen nicht dazu,
+  ihre Stimme abzugeben, oder nahmen aus anderen Gründen nicht an der Wahl teil.
+  Wie war es bei Ihnen: Haben Sie gewählt oder haben Sie nicht gewählt?
+
+{% formfield player.election label="" %}
+</p>
+    {% next_button %}
+{% endblock %}
+
+{% block scripts %}
+
+<!-- <script>
+
+$(function() {
+  if($( "#id_born" ).val()==2){
+    $( "#id_region" ).show();
+  }else{
+    $( "#id_region" ).hide();
+  }
+  $( "#id_born" ).change(function() {
+      if($( "#id_born" ).val()==2){
+        $( "#id_region" ).show();
+      }else{
+        $( "#id_region" ).hide();
+      }
+  });
+}); -->
+
+</script>
+
+{% endblock %}

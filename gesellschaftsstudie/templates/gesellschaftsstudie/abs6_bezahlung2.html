@@ -1,0 +1,127 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block styles %}
+
+    <style type="text/css">
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            font-size: 100%;
+            text-align: center;
+        }
+    </style>
+
+{% endblock %}
+
+
+{% block title %}
+    Bezahlung &ndash; Betrag Einkaufsgutschein
+{% endblock %}
+
+{% block content %}
+
+    <p></p>
+    <p></p>
+
+    <p> Sie haben folgende Entscheidungen getroffen, welche die angegebene Bezahlung zur Folge haben: </p>
+    <table class="table-condensed table-hover" style=" margin-top:0px; text-align: left;">
+        <tr>
+            <td><b> Entscheidungssituation </b></td>
+            <td><b> Ihre Entscheidung </b></td>
+            <td><b> Entscheidung andere/r Teilnehmer/in </b></td>
+            <td><b> Ihre Bezahlung </b></td>
+        </tr>
+        <tr>
+            <td> 1</td>
+            <td> Sie haben {{ player.dec_dg1_shown }}€ abgegeben.</td>
+            <td></td>
+            <td> {{ player.po_dg1_shown }}€</td>
+        </tr>
+        <tr>
+            <td> 2</td>
+            <td> Sie haben {{ player.dec_tg1_shown }}€ verschickt.</td>
+            <td> Der/die andere Teilnehmer/in hat {{ player.tg1_sentback_shown }}€ zurück geschickt.</td>
+            <td>{{ player.po_tg1_shown }}€</td>
+        </tr>
+        <tr>
+            <td> 3</td>
+            <td> Sie haben {{ player.dec_tg2_shown }}€ verschickt.</td>
+            <td> Der/die andere Teilnehmer/in hat {{ player.tg2_sentback_shown }}€ zurück geschickt.</td>
+            <td> {{ player.po_tg2_shown }}€</td>
+        </tr>
+        <tr>
+            <td> 4</td>
+            <td> Sie haben {{ player.dec_dg2_shown }}€ abgegeben.</td>
+            <td></td>
+            <td> {{ player.po_dg2_shown }}€</td>
+        </tr>
+    </table>
+
+    <p></p><p></p>
+
+    <p>
+        Sie haben Entscheidungssituation <b>{{ player.dec_excluded }}</b> von der Bezahlung ausgeschlossen.
+    </p>
+
+    <p>
+    Aus den anderen Entscheidungen ergibt sich folgendes Endguthaben für Sie,
+    welches Sie in Form des Einkaufsgutscheins von uns erhalten werden: </p>
+    <h3><b>{{ final_payoff }}€</b></h3>
+
+    <br>
+    <p> Falls der Betrag weniger als 10€ oder mehr als 20€ betrug, wurde er automatisch auf den
+        Minimalverdienst von 10€ oder den Maximalverdienst von 20€ gerundet.</p>
+
+   <h4><b>Bitte klicken Sie auf 'Studie beenden' um die Bezahlung zu veranlassen und die Studie zu beenden.<br>
+     Vielen Dank für Ihre Teilnahme.</b></h4>
+
+
+<p> <br></p>
+
+{% if final_payoff == "10,00" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227391" class="btn btn-primary btn-large">Studie beenden A</a>
+{% elif final_payoff == "10,50" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227392" class="btn btn-primary btn-large">Studie beenden B</a>
+{% elif final_payoff == "11,00" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227393" class="btn btn-primary btn-large">Studie beenden C</a>
+{% elif final_payoff == "11,50" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227394" class="btn btn-primary btn-large">Studie beenden D</a>
+{% elif final_payoff == "12,00" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227395" class="btn btn-primary btn-large">Studie beenden E</a>
+{% elif final_payoff == "12,50" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227396" class="btn btn-primary btn-large">Studie beenden F</a>
+{% elif final_payoff == "13,00" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227397" class="btn btn-primary btn-large">Studie beenden G</a>
+{% elif final_payoff == "13,50" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227398" class="btn btn-primary btn-large">Studie beenden H</a>
+{% elif final_payoff == "14,00" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227399" class="btn btn-primary btn-large">Studie beenden I</a>
+{% elif final_payoff == "14,50" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227400" class="btn btn-primary btn-large">Studie beenden J</a>
+{% elif final_payoff == "15,00" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227401" class="btn btn-primary btn-large">Studie beenden K</a>
+{% elif final_payoff == "15,50" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227402" class="btn btn-primary btn-large">Studie beenden L</a>
+{% elif final_payoff == "16,00" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227403" class="btn btn-primary btn-large">Studie beenden M</a>
+{% elif final_payoff == "16,50" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227404" class="btn btn-primary btn-large">Studie beenden N</a>
+{% elif final_payoff == "17,00" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227405" class="btn btn-primary btn-large">Studie beenden O</a>
+{% elif final_payoff == "17,50" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227406" class="btn btn-primary btn-large">Studie beenden P</a>
+{% elif final_payoff == "18,00" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227407" class="btn btn-primary btn-large">Studie beenden Q</a>
+{% elif final_payoff == "18,50" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227408" class="btn btn-primary btn-large">Studie beenden R</a>
+{% elif final_payoff == "19,00" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227409" class="btn btn-primary btn-large">Studie beenden S</a>
+{% elif final_payoff == "19,50" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227410" class="btn btn-primary btn-large">Studie beenden T</a>
+{% elif final_payoff == "20,00" %}
+<p> <a href="http://survey.maximiles.com/static-complete?l=227411" class="btn btn-primary btn-large">Studie beenden U</a>
+{% endif %}
+
+
+{% endblock %}

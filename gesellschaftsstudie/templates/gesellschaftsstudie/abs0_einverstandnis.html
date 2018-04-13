@@ -1,0 +1,48 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block styles %}
+
+    <style type="text/css">
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 110%;
+    }
+    </style>
+
+{% endblock %}
+
+{% block title %}
+
+Einverständniserklärung
+
+{% endblock %}
+
+{% block content %}
+
+<p>Die Studie <b>Gemeinschaft und Gesellschaft in Deutschland</b> wird von der
+  Universität Bocconi in Mailand durchgeführt und vom Europäischen
+Forschungsrat im Rahmen des INTERACT-Projektes (#639284) finanziert.</p>
+
+<p>Das Ausfüllen des Fragebogens dauert <b>ca. 25 Minuten</b>. Alle Antworten bleiben anonym und werden ausschließlich
+    zu wissenschaftlichen Zwecken verwendet. Sie können die Befragung jederzeit und ohne Angabe von Gründen abbrechen.</p>
+</p>
+
+<p> Als <b>Dankeschön für Ihre Teilnahme</b> erhalten Sie nach Ausfüllen Guthaben <b>zwischen 10€ und 20€</b>.
+  Der genaue Betrag hängt davon ab, was für Antworten und Entscheidungen Sie und andere Teilnehmer der Studie treffen.
+  Ein <b>Mindestbetrag von 10€</b>  ist Ihnen auf jeden Fall garantiert.
+</p>
+
+ <p>Bei <b>Fragen oder Problemen</b> können Sie sich jederzeit an uns wenden: <b>interact@unibocconi.it</b></p>
+
+ <p>Bevor Sie mit der Bearbeitung der Aufgaben anfangen können, bitten wir um Ihre ausdrückliche Zustimmung
+   zur Teilnahme an der Studie:</p>
+
+ <p> <b>Hiermit bestätige ich, dass ich mindestens 18 Jahre alt bin, die oben beschriebenen Informationen gelesen und verstanden habe und mit den genannten Teilnahmebedingungen einverstanden bin.</b></p>
+
+  <div style="margin-bottom: 2em;"> <span style="display: none;">.</span> </div>
+  <p></p>
+  <p> <button class="btn btn-primary btn-large">Ja, ich bin damit einverstanden und möchte an der Befragung teilnehmen.</button> </p>
+
+{% endblock %}

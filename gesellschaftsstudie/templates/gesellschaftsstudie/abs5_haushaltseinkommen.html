@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+Haushaltseinkommen
+{% endblock %}
+
+{% block inner_content %}
+
+<p><b>Wie hoch ist das monatliche Netto-Einkommen Ihres Haushalts ingesamt (in €)?</b></p>
+<br>
+ <p>Mit Haushaltseinkommen ist die  die Summe der Einkommen aller im Haushalt lebenden Personen gemeint.
+ Und mit Nettoeinkommen die Summe, die nach Abzug der Steuern und Sozialversicherungsbeiträge übrig bleibt.</p>
+<br>
+ <p>Mit Netto-Hauhaltseinkommen ist also das Einkommen gemeint, das alle Mitglieder des Haushalts
+   gemeinsam tatsächlich zur Verfügung haben (in €).</li>
+</p>
+
+ {% formfield player.income label="" %}
+   <br></p>
+
+   {% next_button %}
+
+ {% endblock %}

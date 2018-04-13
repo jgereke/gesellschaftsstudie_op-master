@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+Ausländeranteil
+{% endblock %}
+
+{% block inner_content %}
+
+<ul style="list-style-type:disc">
+<li> Was meinen Sie, wieviel Prozent-Punkte beträgt der Ausländeranteil in Ihrem Bundesland? Bitte geben Sie eine Prozentzahl zwischen 0 und 100 an (Kommazahlen sind auch möglich). {% formfield player.percentageforeignbula label="" %}</li>
+<li> Wie viele Ausländer bzw. Ausländische Familien wohnen hier in Ihrem Wohnort?  {% formfield player.percentageforeignvillage label="" %}</li>
+<li> Wie viele Ihrer Bekannten (nicht Verwandte) haben ausländische Wurzeln? {% formfield player.aquaintances label="" %}</li>
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}

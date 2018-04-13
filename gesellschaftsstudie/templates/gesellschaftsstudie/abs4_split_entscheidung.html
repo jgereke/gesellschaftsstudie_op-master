@@ -1,0 +1,128 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block styles %}
+    <style>
+
+   .title{
+      display: inline-block;
+      height: 30px;
+      border:solid 1px lightgrey;
+      width: 42px;
+      text-align: left;
+   }
+
+    #wrapper {
+        position: relative;
+        width: 700px;
+        height:590px;
+    }
+
+    #top {
+        position: relative;
+        top: 0;
+        left: 0%;
+        width: 100%;
+        height: 5%;
+        /*background: red;*/
+        padding: 10;
+    }
+
+    #left {
+        position: absolute;;
+        float:left;
+        left: 0%;
+        width: 45%;
+        height: 77%;
+        padding: 2%;
+        /*background: green;*/
+    }
+
+    #right {
+        position: absolute;
+        float:right;
+        left: 52%;
+        width: 45%;
+        height: 77%;
+        padding: 2%;
+        /*background: green;*/
+    }
+
+    #bottom {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 23%;
+        padding: 10;
+        /*background: blue;*/
+    }
+    </style>
+
+{%endblock%}
+
+
+{% block title %}
+    Entscheidungssituation 5
+{% endblock %}
+
+{% block inner_content %}
+
+<div id="wrapper">
+
+  <div id="top">
+<p>Der Computer hat folgende zwei hinterlegten Profile ausgewählt:
+</p>
+  </div>
+
+  <div id="left">
+
+      <img  alt = "Foto 3" src = {%  static third_pic %} width=300px/>
+      <p>
+        <b> {{third_name}}, {{third_age}} Jahre, lebt in {{third_bl}}</b>
+      </p>
+      <br>
+  </div>
+
+  <div id="right">
+    <img  alt = "Foto 4" src = {%  static fourth_pic %} width=300px/>
+    <p>
+      <b> {{fourth_name}}, {{fourth_age}} Jahre, lebt in {{fourth_bl}}</b>
+    </p>
+    <br>
+ </div>
+
+ <div id="bottom">
+   <p><br></p>
+   <p>
+     Wie möchten Sie den Betrag vergeben?
+   </p>
+
+   <p>
+     <p> Von den 10€ gebe ich <input type='number' name="dec_split" id="dec_split" onkeyup="updateMoneyLeft(this.value)" style="width: 3em" required>€
+  an <b>{{third_name}}</b>, und somit <span id="deduction_span" style="width: 3em" class="title"><font color="black">&nbsp;</font></span>€ an <b>{{fourth_name}}</b>.</p>
+
+   </p>
+
+     {% next_button %}
+
+{% endblock %}
+
+{% block scripts %}
+
+    <!-- define a script -->
+
+
+    <script>
+           var player_money=document.getElementById("dec_split").value;
+
+           function updateMoneyLeft(moneySpent){
+                if(moneySpent>10){
+                    document.getElementById("dec_split").value = 10;
+                    moneySpent=10;
+                }
+                document.getElementById("deduction_span").innerHTML = 10 - moneySpent;
+           }
+
+
+    </script>
+{% endblock %}

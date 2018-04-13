@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+Deutschland
+{% endblock %}
+
+{% block inner_content %}
+
+<p>
+Inwieweit stimmen Sie den folgenden Aussagen zu:
+</p>
+<ul style="list-style-type:disc">
+
+<li> Was unser Land heute braucht, ist ein hartes und energisches Durchsetzen
+  deutscher Interessen gegenüber dem Ausland.
+{% formfield player.nationalism1 label="" %} </li>
+<li>  Wie zufrieden oder unzufrieden sind Sie &ndash; alles in allem &ndash; mit der Demokratie,
+   so wie sie in Deutschland besteht?
+   {% formfield player.nationalism2 label="" %} </li>
+<li> Würden Sie sagen, dass Sie {% formfield player.nationalism3 label="" %} darauf sind, ein/e Deutsche/r zu sein? </li>
+</ul>
+<p><br></p>
+    {% next_button %}
+
+
+{% endblock %}

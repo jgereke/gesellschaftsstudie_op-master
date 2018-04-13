@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+Ihre Meinung
+{% endblock %}
+
+{% block inner_content %}
+
+
+<p> Auf einer Skala von 1-7 (1= stimme überhaupt nicht zu; 7= stimme voll und ganz zu), inwieweit
+  stimmen Sie den folgenden Aussagen zu:
+ </p>
+ <ul style="list-style-type:disc">
+<li> Die in Deutschland lebenden Ausländer machen die Arbeit, die die Deutschen nicht erledigen wollen.
+  {% formfield player.immposi1 label="" %}</li>
+<li>  Die in Deutschland lebenden Ausländer tragen zur Sicherung der Renten bei.
+  {% formfield player.immposi2 label="" %}</li>
+<li> Die Ausländer kommen nur hierher, um unseren Sozialstaat auszunutzen.
+  {% formfield player.rightwing1 label="" %} </li>
+<li> Kindergeld soll nur an deutsche Familien ausgezahlt werden.
+    {% formfield player.rightwing2 label="" %} </li>
+</ul>
+  <p><br></p>
+
+    {% next_button %}
+
+{% endblock %}

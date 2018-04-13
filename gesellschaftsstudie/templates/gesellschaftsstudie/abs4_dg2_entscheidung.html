@@ -1,0 +1,41 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Entscheidungssituation 4
+{% endblock %}
+
+{% block inner_content %}
+
+<p>Als Erinnerung: der Computer hatte folgendes hinterlegtes Profil ausgewählt:
+</p>
+  <div>
+      <img  alt = "Foto 2" src = {%  static second_pic %} width=300px/>
+  </div>
+  <br>
+  <p>
+    <b> {{second_name}}, {{second_age}} Jahre, lebt in {{second_bl}}</b>
+  </p>
+  <br>
+
+<p>Bitte entscheiden Sie, ob und gegebenenfalls wie viel Ihrer 5€ Sie an
+  {% if player.man_woman_second_pic == "woman" %} diese Teilnehmerin {% else %} diesen Teilnehmer {% endif %}
+  abgeben wollen.
+Klicken Sie auf den entsprechenden Betrag, und sodann auf ‚Weiter’.
+</p>
+
+<b>
+<p>Ich möchte</p>
+
+<div style="font-size:115%">
+{% formfield player.dec_dg2 label="" %}
+</div>
+
+<p>meiner 5€ an
+  {% if player.man_woman_second_pic == "woman" %} diese Teilnehmerin {% else %} diesen Teilnehmer {% endif %}
+  abgeben.
+</p>
+</b>
+<p><br></p>
+    {% next_button %}
+{% endblock %}

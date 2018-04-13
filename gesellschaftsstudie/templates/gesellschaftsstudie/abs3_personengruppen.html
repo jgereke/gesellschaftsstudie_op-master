@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+Zuzug verschiedener Personengruppen
+{% endblock %}
+
+{% block inner_content %}
+
+
+ <p>Im Folgenden geht es um den Zuzug verschiedener Personengruppen nach Deutschland.
+Wie ist Ihre Einstellung zu der Beschränkung des Zuzugs?
+</p>
+
+<ul style="list-style-type:disc">
+<li>Wie ist es mit Flüchtlingen aus Ländern, in denen Krieg herrscht? {% formfield player.attdiff1 label="" %}</li>
+<li>Und mit Flüchtlingen, die in ihrer Heimat politisch verfolgt werden? {% formfield player.attdiff2 label="" %}</li>
+<li>Und mit Flüchtlingen, die wegen der wirtschaftlichen Not in ihren Heimatländern nach
+Deutschland kommen? {% formfield player.attdiff3 label="" %}</li>
+<li> Und mit Ehepartnern und Kindern, die ihren bereits hier lebenden Angehörigen nach Deutschland folgen?
+  {% formfield player.attdiff4 label="" %}</li>
+</ul>
+  <p><br></p>
+
+    {% next_button %}
+
+{% endblock %}

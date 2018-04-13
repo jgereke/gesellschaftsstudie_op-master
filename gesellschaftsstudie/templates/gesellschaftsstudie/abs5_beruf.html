@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+Ausbildung und Beruf
+{% endblock %}
+
+{% block inner_content %}
+
+
+<p>Als nächstes kommen jetzt Fragen zu Ihrer Ausbildung und Ihrem Beruf.
+Beginnen wir mit Ihrer Ausbildung:</p>
+
+<ul style="list-style-type:disc">
+<li> Was ist ihr derzeit höchster Schulabschluss?</li>
+{% formfield player.education label="" %}
+<li> Sind Sie zur Zeit erwerbstätig? Damit meinen wir eine bezahlte Tätigkeit,
+  egal welchen zeitlichen Umfang sie hat (jedoch nicht die Rente). {% formfield player.employed label="" %}</li>
+</ul>
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}

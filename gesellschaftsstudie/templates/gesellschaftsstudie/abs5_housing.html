@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Wohnen
+{% endblock %}
+
+{% block inner_content %}
+
+<ul style="list-style-type:disc">
+<li> Die nächste Frage bezieht sich auf die Wohnung, in der Sie bzw. Ihre Familie hier wohnen.
+  Sagen Sie mir bitte, was von dieser Liste auf Sie bzw. Ihre Familie zutrifft.
+</li>
+<p></p>
+
+ {% formfield player.housing with label="" %}
+ <p><br></p>
+
+   {% next_button %}
+
+ {% endblock %}

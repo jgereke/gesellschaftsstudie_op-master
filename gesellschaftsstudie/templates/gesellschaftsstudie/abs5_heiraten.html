@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+Einheiraten in die Familie
+{% endblock %}
+
+{% block inner_content %}
+
+
+<p>Und wie wäre es, wenn ein Angehöriger einer dieser Gruppen in Ihre Familie einheiraten würde?
+  Inwieweit wäre Ihnen das angenehm oder unangenehm?</p>
+
+<ul style="list-style-type:disc">
+  <li> Polen {% formfield player.familypoles label="" %}</li>
+  <li> Türken {% formfield player.familyturks label="" %}</li>
+  <li> Syrer {% formfield player.familysyrian label="" %}</li>
+  <li> Nigerianer {% formfield player.familynigerian label="" %}</li>
+</ul>
+  <p><br></p>
+
+    {% next_button %}
+
+  {% endblock %}

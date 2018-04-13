@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+Flüchtlinge und Asylsuchende
+{% endblock %}
+
+{% block inner_content %}
+
+
+<p>Inwieweit stimmen Sie den folgenden Aussagen zu Flüchtlingen und Asylsuchenden zu?
+</p>
+
+<ul style="list-style-type:disc">
+<li>Ich habe die Sorge, dass wegen der Flüchtlinge und Asylsuchenden die Konkurrenz auf dem Arbeitsmarkt zunehmen wird. {% formfield player.asyl_compete label="" %}</li>
+<li>Asylsuchende, deren Antrag auf Asyl abgelehnt wurde, sollten ohne Ausnahme abgeschoben werden. {% formfield player.asyl_deport label="" %}</li>
+<li>Ich sehe es als eine Chance, dass unsere Gesellschaft durch die Flüchtlinge und Asylsuchenden kulturell vielfältiger wird. {% formfield player.asyl_diverse label="" %}</li>
+<li>Die Behörden sollten mehr tun, um Ausländer und Flüchtlinge vor fremdenfeindlichen Übergriffen zu schützen.{% formfield player.asyl_protect label="" %}</li>
+</ul>
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}

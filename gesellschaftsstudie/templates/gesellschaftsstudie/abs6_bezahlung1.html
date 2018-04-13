@@ -1,0 +1,37 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block styles %}
+
+{% endblock %}
+
+
+{% block title %}
+    Bezahlung
+{% endblock %}
+
+{% block content %}
+
+    <p>Nun kommen wir zur Bezahlung. Als Dankeschön für Ihre Teilnahme an dieser
+        Studie erhalten Sie von uns, wie zu Beginn angekündigt, ein Guthaben in Höhe von
+        10€ bis 20€ gutgeschrieben.
+    </p>
+
+    <p>Um die Bezahlung in diesem Rahmen zu halten, können <b>lediglich drei
+        der vier Aufgaben</b>, die Sie bearbeitet haben, berücksichtigt werden.
+    </p>
+
+    <p>Wir möchten Sie daher bitten, eine der Aufgaben &ndash; 1, 2, 3 oder 4 &ndash; von der Bezahlung
+        auszuschließen. Bitte wählen Sie hier, welche Aufgabe <b>nicht</b> mit in Ihr Endguthaben einfließen soll.</p>
+
+    <p>Auf der nächsten Seite sehen Sie dann eine Zusammenfassung Ihrer Entscheidungen, und den Geldbetrag,
+        welchen Sie als Dankeschön für Ihre Teilnahme an dieser Studie erhalten.</p>
+
+    <p>Ich schließe</p>
+    {% formfield player.dec_excluded label="" %}
+    <p>von der Bezahlung aus.</p>
+
+
+    {% next_button %}
+
+{% endblock %}

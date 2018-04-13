@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+Wirtschaftliche Situation
+{% endblock %}
+
+{% block inner_content %}
+
+<p>  Wenn Sie jetzt an Ihre eigene finanzielle Situation denken, wie schätzen Sie diese ein?  {% formfield player.ownfinancial label="" %}</p>
+
+<p> Im Vergleich dazu, wie andere in Deutschland leben: Glauben Sie, dass Sie persönlich
+Ihren gerechten Anteil erhalten?{% formfield player.fairshare label="" %}</p>
+
+<p> Es macht mir Sorgen, durch die gesellschaftliche Entwicklung
+immer mehr auf die Verliererseite des Lebens zu geraten. {% formfield player.loserside label="" %}</p>
+
+<p>Westdeutsche behandeln Ostdeutsche als Menschen zweiter Klasse. {% formfield player.secondclass label="" %} </p>
+
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}

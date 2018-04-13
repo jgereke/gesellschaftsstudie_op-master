@@ -1,0 +1,75 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Entscheidungssituation 2
+{% endblock %}
+
+{% block content %}
+
+<p> Wir bitten Sie nun, eine weitere Entscheidung zu treffen. Auch hier beeinflussen die Geldbeträge
+   Ihr persönliches Guthaben, das Sie von uns am Ende als Dankeschön für die Teilnahme an der Studie erhalten.
+</p>
+
+<p> Sie sind weiterhin mit
+  {% if player.man_woman_first_pic == "woman" %} der anderen Teilnehmerin {% else %} dem anderen Teilnehmer {% endif %}
+  gepaart,
+  {% if player.man_woman_first_pic == "woman" %} welche {% else %} welchen {% endif %}
+  Sie schon aus der vorherigen Situation kennen.
+  Sie und
+  {% if player.man_woman_first_pic == "woman" %} die andere Teilnehmerin {% else %} der andere Teilnehmer {% endif %}
+  <b>erhalten beide jeweils 5€</b> als Startguthaben. </p>
+<br>
+
+<p>   <b>Ihre Aufgabe besteht darin, das Startguthaben ganz oder teilweise an
+  {% if player.man_woman_first_pic == "woman" %} die andere Teilnehmerin {% else %} den anderen Teilnehmer {% endif %}
+  weiterzugeben, oder ganz oder teilweise für sich zu behalten.</b></p>
+
+<br>
+<p>
+    Wir, das Forschungsteam, <b>verdoppeln den Betrag, den Sie gegebenenfalls an
+    {% if player.man_woman_first_pic == "woman" %} die andere Teilnehmerin {% else %} den anderen Teilnehmer {% endif %}
+    weitergeben.</b> </p>
+<br>
+<p>Zum Beispiel: Sie geben 2€, und
+    {% if player.man_woman_first_pic == "woman" %} die andere Teilnehmerin {% else %} der andere Teilnehmer {% endif %}
+    erhält 4€ von uns,  uns und hat dann 9€.
+  Oder Sie geben 4€, und
+  {% if player.man_woman_first_pic == "woman" %} die andere Teilnehmerin {% else %} der andere Teilnehmer {% endif %}
+  erhält 8€ von uns, und hat dann 13€., usw.
+  Durch das Verschicken kann der Geldbetrag also erhöht werden.
+</p>
+
+<br>
+ <p> <b>
+   {% if player.man_woman_first_pic == "woman" %} Die andere Teilnehmerin {% else %} Der andere Teilnehmer {% endif %}
+   entscheidet dann, welchen Teil von dem erhaltenen Geld
+   {% if player.man_woman_first_pic == "woman" %} sie {% else %} er {% endif %}
+   an Sie zurückschickt.</b>
+   Schickt
+   {% if player.man_woman_first_pic == "woman" %} sie {% else %} er {% endif %}
+   2€, erhalten Sie 2€, schickt
+   {% if player.man_woman_first_pic == "woman" %} sie {% else %} er {% endif %}
+   5€ erhalten Sie 5€, usw.
+ </p>
+<br>
+  <p>
+   <b>Ihre Entscheidung und die Entscheidung
+     {% if player.man_woman_first_pic == "woman" %} der anderen Teilnehmerin {% else %} des anderen Teilnehmers {% endif %}
+     bestimmen zusammen, wie hoch der erzielte Betrag für Sie und
+     {% if player.man_woman_first_pic == "woman" %} die andere Teilnehmerin {% else %} den anderen Teilnehmer {% endif %}
+     letztlich sein wird.</b> </p>
+<br>
+ <p>Nachdem Sie Ihre Entscheidung getroffen haben, schicken wir
+   {% if player.man_woman_first_pic == "woman" %} der anderen Teilnehmerin {% else %} dem anderen Teilnehmer {% endif %}
+ den entsprechenden Geldbetrag.
+ </p>
+
+ <p>Auf der nächsten Seite wird diese Entscheidungssituation noch einmal grafisch verdeutlicht.
+ </p>
+
+<p><br></p>
+
+    {% next_button %}
+
+{% endblock %}

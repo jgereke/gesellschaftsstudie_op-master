@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+Zeitungsüberschriften &ndash; Ihre Meinung
+{% endblock %}
+
+{% block content %}
+
+ <p> Bitte erinnern Sie sich kurz an die gerade gelesenen Zeitungsüberschriften. Auf einer Skala von 1 bis 7,
+ inwieweit entsprechen die Zeitungsüberschriften Ihrer persönlichen Wahrnehmung?
+ </p>
+
+{% formfield player.manipulationcheck label="" %}
+<p><br></p>
+    {% next_button %}
+
+
+{% endblock %}

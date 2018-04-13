@@ -1,0 +1,35 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+Bezahlung &ndash; Kontaktdaten
+{% endblock %}
+
+{% block inner_content %}
+
+
+<p>
+Bitte geben Sie hier eine <b>E-Mail-Adresse</b> ein an die wir Ihren Online-Gutschein verschicken können:
+ {% formfield player.email1 label="" %}
+</p>
+
+
+<p>
+Bitte <b>wiederholen</b> Sie zur Sicherheit die Eingabe Ihrer E-Mail-Adresse:
+ {% formfield player.email2 label="" %}
+</p>
+
+<p>
+Ihr Gutschein wird <b>im Laufe der nächsten 10 Werktage an die angegebene Mailadresse versandt.</b>
+</p>
+
+<p>
+  Falls Sie Ihren Gutschein bis dahin nicht erhalten haben sollten, wenden Sie sich bitte an jenastudie@uni-jena.de
+oder unsere Hotline unter 03641/945596.
+</p>
+
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}

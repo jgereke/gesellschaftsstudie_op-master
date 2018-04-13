@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+Nachbarn
+{% endblock %}
+
+{% block inner_content %}
+
+<p>Wie angenehm oder unangenehm wären Ihnen Angehörige dieser Gruppen als
+Nachbarn?</p>
+
+<ul style="list-style-type:disc">
+<li> Polen {% formfield player.neighborpoles label="" %}</li>
+<li> Türken {% formfield player.neighborturks label="" %}</li>
+<li> Syrer {% formfield player.neighborsyrian label="" %}</li>
+<li> Nigerianer {% formfield player.neighbornigerian label="" %}</li>
+</ul>
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}

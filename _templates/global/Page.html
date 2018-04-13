@@ -1,0 +1,59 @@
+{% extends "otree/Page.html" %}
+
+{% load staticfiles otree %}
+
+
+{% block global_styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'global/custom.css' %}"/>
+
+    <style type="text/css">
+        p, ul {
+            font-size: 115%
+        }
+    </style>
+
+    <!-- # Table styling -->
+
+{% endblock %}
+
+{% block global_scripts %}
+    <!-- uncomment the below lines to enable HighCharts -->
+    <!--
+    <script src="//code.highcharts.com/highcharts.js"></script>
+    <script src="//code.highcharts.com/highcharts-3d.js"></script>
+    <script src="//code.highcharts.com/modules/exporting.js"></script>
+    -->
+
+    <!--Custom scripts-->
+    <script type="text/javascript" src="{% static 'global/custom.js' %}"></script>
+    <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+
+
+{% endblock %}
+{% block content %}
+    {% block inner_content %}
+
+    {% endblock %}
+    <div class="container pg">
+        <div class="row">
+            <div class="col-sm-0"></div>
+            <div class="col-sm-3">
+                <div class="progress" style="height: 5px;">
+                    <div class="progress-bar" role="progressbar"
+                         style="width: {{ progressrel }}%"
+                         aria-valuemin="0" aria-valuemax="100">
+                        <span class="">{{ progress_round }}%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+    .pg{
+        padding-left: 0px;
+        padding-right:25px;
+        padding-top: 5px;
+
+    }
+    </style>
+{% endblock %}

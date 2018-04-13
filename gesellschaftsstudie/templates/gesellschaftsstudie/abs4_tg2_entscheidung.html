@@ -1,0 +1,51 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Entscheidungssituation 3
+{% endblock %}
+
+{% block inner_content %}
+
+ <p>Der Computer hat folgendes Profil ausgewählt:
+ </p>
+   <div>
+       <img  alt = "Foto 2" src = {%  static second_pic %} width=300px/>
+   </div>
+   <br>
+   <p>
+     <b> {{second_name}}, {{second_age}} Jahre, lebt in {{second_bl}}</b>
+   </p>
+   <br>
+<b>
+   <p>Wieviel Ihrer 5€ wollen Sie an
+     {% if player.man_woman_second_pic == "woman" %} diese Teilnehmerin {% else %} disen Teilnehmer {% endif %}schicken?
+
+<div style="font-size:100%">
+{% formfield player.dec_tg2 label="" %}
+</div>
+
+<p>
+  {% if player.man_woman_second_pic == "woman" %} Die Teilnehmerin {% else %} Der Teilnehmer {% endif %}
+   wird den doppelten Betrag von uns erhalten, und wird dann entscheiden, welchen Betrag
+   {% if player.man_woman_second_pic == "woman" %} sie {% else %} er {% endif %}
+   an Sie zurück schickt.
+</p>
+</b>
+<p><br></p>
+<details style="font-size: 100%">
+    <summary style="outline:none"> <b>Klicken Sie hier, falls Sie das Schaubild noch einmal sehen möchten.</b></summary>
+    <br>
+    {% if player.man_woman_second_pic == "woman" %}
+    <img  alt = "Schaubild Entscheidungssituation" src = {%  static "homepage/tg_w.png" %} width=500px/>
+    {% else %}
+    <img  alt = "Schaubild Entscheidungssituation" src = {%  static "homepage/tg_m.png" %} width=500px/>
+    {% endif %}
+     </p>
+</details>
+
+<p><br></p>
+
+    {% next_button %}
+
+{% endblock %}

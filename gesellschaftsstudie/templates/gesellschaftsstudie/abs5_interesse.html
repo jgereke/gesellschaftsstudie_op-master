@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+Interesse an Politik
+{% endblock %}
+
+{% block inner_content %}
+
+<p>Wie stark interessieren Sie sich für Politik?
+ {% formfield player.politics label="" %}</p>
+
+ <p>Wie ist der Name des aktuellen Bürgermeister/der aktuellen Bürgermeisterin Ihrer Gemeinde?
+   Falls Sie den Namen nicht kennen, lassen Sie dieses Feld frei.
+    {% formfield player.mayor label="" %}</p>
+
+<p>In der Politik spricht man häufig von &bdquo;links&ldquo; und &bdquo;rechts&ldquo;. Wir hätten gerne von Ihnen gewusst, ob Sie
+  sich selbst eher links oder eher rechts einstufen.
+  Bitte geben Sie dies mit Hilfe einer Skala von 1 bis 11 an.
+  <br><br>
+  Wenn 1  	&bdquo;links&ldquo; und 11 &bdquo;rechts&ldquo; bedeutet, wo würden Sie sich selbst einstufen?
+  {% formfield player.rightleft label="" %}</p>
+
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}

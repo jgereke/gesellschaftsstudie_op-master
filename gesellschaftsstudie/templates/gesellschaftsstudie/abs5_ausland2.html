@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+Bekannte mit ausländischen Wurzeln
+{% endblock %}
+
+{% block inner_content %}
+
+<ul style="list-style-type:disc">
+<li> Sind diese Bekannten während der letzten drei Jahre/ seit Beginn der Flüchtlingskrise nach Deutschland gekommen? {% formfield player.aquaintancesrefugees label="" %}</li>
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}
